@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	padding: 10px;
+	font-family: "Montserrat", sans-serif;
+	display: grid;
+	place-items: center;
+}
+
+.music-player {
+	color: white;
+	width: 100%;
+	max-width: 450px;
+	border-radius: 5px;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 10px 15px 20px #00000070;
+}
+
+.music-player::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("./media/images/giphy.gif");
+	background-repeat: no-repeat, no-repeat;
+	background-origin: content-box;
+	filter: blur(5px);
+	z-index: -1;
+	background-size: cover;
+	background-position: right, left;
+	height: 100%;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-weight: bold;
+	padding: 20px 15px;
+}
+
+nav span {
+	display: grid;
+	place-items: center;
+	font-size: large;
+	cursor: pointer;
+}
+
+/* Text : By CodeBustler */
+nav p:last-child {
+	font-weight: 400;
+	margin-top: 3px;
+	font-size: 14px;
+	color: grey;
+}
+
+nav i {
+	font-size: 22px;
+	color: #fff;
+	padding: 10px;
+}
+
+#song-img {
+	width: 55%;
+	object-fit: cover;
+	margin: 15px 0;
+	aspect-ratio: 1/1;
+	border: 1px solid greenyellow;
+}
+
+#song-name {
+	font-weight: bold;
+	margin-bottom: 5px;
+	font-size: 22px;
+}
+
+#song-artist {
+	color: grey;
+}
+
+#progress {
+	width: 80%;
+	margin-top: 20px;
+}
+.controls {
+	/*	background-color: red;*/
+	margin: 35px 0;
+	margin-bottom: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 35px;
+	color: black;
+	padding-bottom: 20px;
+}
+
+.controls div {
+	width: 45px;
+	height: 45px;
+	background-color: white;
+	border-radius: 50%;
+	cursor: pointer;
+	position: relative;
+	display: grid;
+	place-items: center;
+	font-size: 16px;
+	transition: 0.1s;
+}
+
+.controls div:nth-child(2) {
+	transform: scale(1.5);
+}
+
+.controls div i {
+	position: relative;
+}
+
+.fa-backward {
+	right: 2px;
+}
+.fa-forward {
+	left: 2px;
+}
+
+.fa-play {
+	font-size: 21px;
+	left: 1px;
+}
+
+.controls div:active {
+	background-color: greenyellow;
+	transform: rotate(45deg);
+}
+
+.playlist {
+	/*	cursor: pointer;*/
+}
+
+.song-list {
+	background-color: #010101de;
+	text-align: left;
+	height: calc(100% - 44px);
+	width: 100%;
+	position: absolute;
+	top: 0;
+	padding: 15px;
+	overflow-y: scroll;
+	border-radius: 5px;
+	transform: translateY(1000px);
+	transition: transform 0.2s;
+	z-index: 1;
+}
+
+.song-list .fa-play {
+	color: yellowgreen;
+}
+
+.toggle-playlist {
+	transform: translateY(0px);
+}
+.song-list li {
+	list-style: none;
+	list-style-position: inside;
+	background-color: transparent;
+	border: 1px solid gray;
+	margin: 20px 10px;
+	padding: 15px 20px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	transition: 0.1s;
+}
+
+.song-list li:hover {
+	background-color: yellowgreen;
+}
+
+.song-list li:hover i {
+	color: black;
+}
+
+.song-list li i {
+	margin-right: 15px;
+}
+
+.song-list li p:first-child {
+	font-weight: bold;
+}
+
+.song-list li p:last-child {
+	color: grey;
+}
+
+#playlist-title {
+	padding: 15px;
+	background-color: greenyellow;
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+	z-index: 10;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+#playlist-title i {
+	margin-left: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #89bb3c;
+	border-radius: 30px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: greenyellow;
+}
+
+input[type="range"] {
+	-webkit-appearance: none;
+	width: 100%;
+	cursor: pointer;
+}
+input[type="range"]:focus {
+	outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+	height: 12px;
+	background: yellowgreen;
+}
+input[type="range"]::-webkit-slider-thumb {
+	height: 24px;
+	width: 24px;
+	border-radius: 24px;
+	background: white;
+	-webkit-appearance: none;
+	margin-top: -6px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	body {
+		padding: 0;
+	}
+	#song-img {
+		margin: 20px 0;
+		width: 50%;
+	}
+	.music-player {
+		max-width: 100%;
+		height: 100vh;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	.controls {
+		margin-top: 50px;
+	}
+}
+
+@media only screen and (max-width: 430px) {
+	#song-img {
+		width: 70%;
+		margin-top: 20px;
+	}
+
+	nav {
+		padding-bottom: 0px;
+	}
+
+	.song-list {
+		padding: 5px;
+	}
+
+	.controls {
+		margin-top: 40px;
+	}
+}

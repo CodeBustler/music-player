@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Music Player | 80/100 Projects By CodeBustler</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="icon"
+			type="image/png"
+			href="https://avatars.githubusercontent.com/u/110022096?v=4"
+		/>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+		<script
+			src="https://kit.fontawesome.com/81d73e8e4d.js"
+			crossorigin="anonymous"
+		></script>
+		<script src="./script.js" defer></script>
+	</head>
+	<body>
+		<div class="music-player">
+			<!-- TITLE & NAV -->
+			<div id="bg">
+				<nav>
+					<span><i class="fa-solid fa-chevron-left"></i></span>
+					<div class="cb">
+						<p>augstin</p>
+						<p>By CodeBustler</p>
+					</div>
+					<span><i class="fa-solid fa-ellipsis-vertical"></i></span>
+				</nav>
+
+				<!-- ######################################## -->
+				<!-- SONG IMAGE -->
+				<img src="./media/images/badass.jpg" id="song-img" />
+
+				<!--  SONG DETAILs -->
+				<h1 id="song-name">Badass (From Leo)</h1>
+				<div id="song-artist">By Anirudh Ravichander</div>
+
+				<!-- PROGRESS BAR -->
+				<input type="range" id="progress" />
+
+				<!-- AUDIO  -->
+				<audio
+					id="song"
+					src="./media/songs/badass.mp3"
+					type="audio/mp3"
+				>
+					No Browser Support
+				</audio>
+
+				<!-- CONTROLS -->
+				<div class="controls">
+					<div onclick="playPreviusSong()">
+						<i id="backPlayBTN" class="fa-solid fa-backward"></i>
+					</div>
+					<div onclick="playPause()" class=".playBT">
+						<i id="playBTN" class="fa-solid fa-play"></i>
+					</div>
+					<div onclick="playNextSong() ">
+						<i id="nextPlayBTN" class="fa-solid fa-forward"></i>
+					</div>
+				</div>
+
+				<!-- ######################################## -->
+
+				<!-- PLAYLIST -->
+				<div class="playlist">
+					<p id="playlist-title">
+						Play List <i class="fa-solid fa-angles-up"></i>
+					</p>
+					<ul class="song-list"></ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
