@@ -2,4 +2,4 @@
 By using HTML, CSS & JS 
 
 ## Project Live
-https://codebustler.github.io/music-player/
+https://music-player-cb.netlify.app/
